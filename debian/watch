@@ -1,0 +1,3 @@
+version=4
+opts="uversionmangle=s/-//g,oversionmangle=s/^//,filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/Colloid-icon-theme-$1\.tar\.gz/" \
+https://github.com/vinceliuice/Colloid-icon-theme/tags .*/v?(\d\S*)\.tar\.gz

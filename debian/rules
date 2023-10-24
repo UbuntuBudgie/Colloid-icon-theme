@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+export DH_VERBOSE = 1
+
+%:
+	dh $@
+
+override_dh_clean:
+	rm -rf ./debian/colloid-icon-theme
+	dh_clean
+
+override_dh_auto_build:
+	mkdir -p ./debian/colloid-icon-theme/usr/share/icons
+	./install.sh -t all -d "$(CURDIR)/debian/colloid-icon-theme/usr/share/icons"
+	dh_auto_build
+
+override_dh_prep:
+	echo "override dh_prep"
