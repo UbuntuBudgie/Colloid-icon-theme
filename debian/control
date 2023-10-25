@@ -16,3 +16,14 @@ Section: misc
 Depends: ${misc:Depends}
 Description: Colorful, modern icon theme for linux desktops
  The icon-theme is complemented by the colloid-gtk-theme
+
+Package: colloid-cursors
+Architecture: all
+Section: misc
+Depends: ${misc:Depends}
+Description: Stylish and colorful colloid based cursors
+ The cursor-theme is complemented by the colloid-gtk-theme
+ .
+ This package will install the Colloid cursor theme to Colloid-cursors
+ and the Colloid-dark cursor theme to Colloid-white-cursors for clarificaton
+ and consistency with other themes from the same author

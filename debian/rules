@@ -1,17 +1,20 @@
 #!/usr/bin/make -f
 export DH_VERBOSE = 1
+export NO_PNG_PKG_MANGLE=1
 
 %:
 	dh $@
 
 override_dh_clean:
-	rm -rf ./debian/colloid-icon-theme
+	rm -rf ./debian/colloid-icon-theme_tmp
 	dh_clean
 
 override_dh_auto_build:
-	mkdir -p ./debian/colloid-icon-theme/usr/share/icons
-	./install.sh -t all -d "$(CURDIR)/debian/colloid-icon-theme/usr/share/icons"
-	dh_auto_build
+	mkdir -p ./debian/colloid-icon-theme_tmp
+	./install.sh -t all -d "$(CURDIR)/debian/colloid-icon-theme_tmp"
 
 override_dh_prep:
 	echo "override dh_prep"
+
+override_dh_strip_nondeterminism:
+	echo "override dh_strip_nondeterminism"
