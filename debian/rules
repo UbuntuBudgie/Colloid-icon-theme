@@ -11,7 +11,7 @@ override_dh_clean:
 
 override_dh_auto_build:
 	mkdir -p ./debian/colloid-icon-theme_tmp
-	./install.sh -t all -s catppuccin -d "$(CURDIR)/debian/colloid-icon-theme_tmp"
+	./install.sh --scheme all --theme all --notint --dest "$(CURDIR)/debian/colloid-icon-theme_tmp"
 
 override_dh_prep:
 	echo "override dh_prep"
